@@ -2,10 +2,9 @@ import type { WebGLEngine } from '@galacean/engine'
 import { Entity } from '@galacean/engine'
 import { createCube } from '..'
 
-export function createGround(engine: WebGLEngine) {
+export async function createGround(engine: WebGLEngine) {
   const entity = new Entity(engine, 'ground_entity')
-  const cube = createCube(engine)
-  console.warn(cube.entity)
+  const cube = await createCube(engine)
   entity.addChild(cube.entity)
   return { entity }
 }
