@@ -15,7 +15,8 @@
     "@galacean/engine-toolkit-controls": "^0.9.0",
     "less": "^4.1.3",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "zustand": "^4.3.7"
   },
   "devDependencies": {
     "@antfu/eslint-config": "^0.38.5",

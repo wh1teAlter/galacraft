@@ -1,9 +1,23 @@
-export enum TypeMap {
-  clod = 1,
+import { Vector2 } from '@galacean/engine'
+import { BlockID, voxelSurfLength } from '.'
+import type { BlockMap } from '.'
+
+export const subMeshMax = 65535 - voxelSurfLength
+
+export const blockMap: BlockMap = {
+  [BlockID.blank]: {
+    display: 'transparent',
+  },
+  [BlockID.clod]: {
+    display: 'opaque',
+    uvOffset: {
+      default: new Vector2(0.25, 0.0),
+    },
+  },
 }
 
-interface Cube {
-  type: TypeMap
-}
+export const sectionSize = 16
 
-export const data: Cube[] = [{ type: 1 }]
+export const sectionHeight = 64
+
+export const chunkSize = 3
