@@ -9,7 +9,7 @@ export async function createBlock(engine: WebGLEngine) {
   const p: Vector3[] = []
   // const uv: Vector2[] = []
   const normal: Vector3[] = []
-  const surfs = Object.keys(voxelSurf).map(i => Number(i)) as Surf[]
+  const surfs = Object.keys(voxelSurf) as Surf[]
   surfs.forEach((surf) => {
     p.push(...voxelSurf[surf])
     // uv.push(...UVMap[BlockID.clod][surf])

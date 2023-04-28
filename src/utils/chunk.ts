@@ -5,7 +5,7 @@ import type { OriginChunk, OriginSection } from '../constants'
 // 根据sectionSize生成section
 export function createSectionData(position: Vector2) {
   const section: OriginSection = {
-    position,
+    position: position.clone(),
     data: '',
   }
   for (let x = 0; x < sectionSize; x++) {
