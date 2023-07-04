@@ -10,6 +10,9 @@ dependencies:
   '@galacean/engine-toolkit-controls':
     specifier: 1.0.0-beta.0
     version: 1.0.0-beta.0(@galacean/engine@1.0.0-beta.7)
+  immer:
+    specifier: ^10.0.1
+    version: 10.0.1
   less:
     specifier: ^4.1.3
     version: 4.1.3
@@ -21,7 +24,7 @@ dependencies:
     version: 18.2.0(react@18.2.0)
   zustand:
     specifier: ^4.3.7
-    version: 4.3.7(react@18.2.0)
+    version: 4.3.7(immer@10.0.1)(react@18.2.0)
 
 devDependencies:
   '@antfu/eslint-config':
@@ -2102,6 +2105,10 @@ packages:
     requiresBuild: true
     optional: true
 
+  /immer@10.0.1:
+    resolution: {integrity: sha512-zg++jJLsKKTwXGeSYIw0HgChSYQGtu0UDTnbKx5aGLYgte4CwTmH9eJDYyQ6FheyUtBe+lQW9FrGxya1G+Dtmg==, tarball: https://registry.npm.alibaba-inc.com/immer/download/immer-10.0.1.tgz}
+    dev: false
+
   /import-fresh@3.3.0:
     resolution: {integrity: sha1-NxYsJfy566oublPVtNiM4X2eDCs=, tarball: https://registry.npm.alibaba-inc.com/import-fresh/download/import-fresh-3.3.0.tgz}
     engines: {node: '>=6'}
@@ -3280,7 +3287,7 @@ packages:
     engines: {node: '>=10'}
     dev: true
 
-  /zustand@4.3.7(react@18.2.0):
+  /zustand@4.3.7(immer@10.0.1)(react@18.2.0):
     resolution: {integrity: sha512-dY8ERwB9Nd21ellgkBZFhudER8KVlelZm8388B5nDAXhO/+FZDhYMuRnqDgu5SYyRgz/iaf8RKnbUs/cHfOGlQ==, tarball: https://registry.npm.alibaba-inc.com/zustand/download/zustand-4.3.7.tgz}
     engines: {node: '>=12.7.0'}
     peerDependencies:
@@ -3292,6 +3299,7 @@ packages:
       react:
         optional: true
     dependencies:
+      immer: 10.0.1
       react: 18.2.0
       use-sync-external-store: 1.2.0(react@18.2.0)
     dev: false

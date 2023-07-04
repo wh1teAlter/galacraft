@@ -14,15 +14,17 @@ export enum Surf {
   right = '6',
 }
 
-export type BlockMap = {
-  [k in BlockID]: {
-    // size: number
-    display: 'translucent' | 'opaque' | 'transparent'
-    uvOffset?: { [s in Surf]?: Vector2 } & { default?: Vector2 }
-  }
+export interface Block {
+  // translucent 半透明 opaque 不透明 transparent 透明
+  display: 'translucent' | 'opaque' | 'transparent'
+  uvOffset: { [s in Surf]: Vector2 }
 }
 
-// export type Section = string[][]
+export type BlockMap = {
+  [k in BlockID]: Block
+}
+
+export type Section = BlockID[][][]
 
 export interface OriginSection {
   data: string
@@ -31,8 +33,6 @@ export interface OriginSection {
     y: number
   }
 }
-
-// export type Chunk = Section[][]
 
 export type OriginChunk = OriginSection[]
 

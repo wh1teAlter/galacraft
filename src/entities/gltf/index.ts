@@ -52,6 +52,7 @@ export async function createGLTF(engine: WebGLEngine) {
   indices.length = 0
 
   data.defaultSceneRoot.destroy()
+  // @ts-expect-error aaa
   data = null
 
   let c = 0

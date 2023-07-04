@@ -1,10 +1,11 @@
 import React, { useCallback, useEffect, useRef } from 'react'
 import { WebGLEngine } from '@galacean/engine'
 import { createCamera, createGLTF, createLight } from './entities'
-import { scaleUV } from './constants'
+import chunk from './utils/chunk.json'
 
 // import './loader/voxelgltf'
 import './App.less'
+import { appStore } from './store'
 
 const App: React.FC = () => {
   const ready = useRef(false)
@@ -24,6 +25,9 @@ const App: React.FC = () => {
     // const chunk = await createChunk(engine)
     // rootEntity.addChild(chunk.entity)
 
+    // const player = createPlayer(engine)
+    // rootEntity.addChild(player.entity)
+
     const gltf = await createGLTF(engine)
     rootEntity.addChild(gltf.entity)
 
@@ -34,7 +38,9 @@ const App: React.FC = () => {
     if (ready.current)
       return
     ready.current = true
-    scaleUV()
+    const { initChunkData } = appStore.getState()
+    initChunkData(chunk)
+
     // console.warn(JSON.stringify(createChunkData()))
     init().catch(err => console.warn(err))
   }, [])
